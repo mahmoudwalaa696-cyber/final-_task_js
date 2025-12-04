@@ -299,7 +299,7 @@ body.dark #elementCart p {
 }
 @media (max-width: 768px){
     #elementCart p {
-    margin-left: 70px;
+    margin-left: 0px;
   margin-top: 70px;
 }
 }

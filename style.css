@@ -318,7 +318,7 @@ background-color: white;
 }
  @media (max-width: 768px){
   .hh1 hr{
-  margin-left: 140px;
+  margin-left: 70px;
 }
  }
 
@@ -359,7 +359,7 @@ margin-left: 10px;
 }
 @media (max-width: 768px){
   .filters{
-  margin-left: 150px;
+  margin-left: 85px;
 }
   .styled-select{
     margin: 4px;
