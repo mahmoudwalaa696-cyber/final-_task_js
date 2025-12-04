@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="cart.css">
+          <!-- bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+</head>
+<body>
+    <!-- navbar -->
+        <nav class="navbar">
+  <div class="container-nav">
+
+    <!-- Left side (logo + links) -->
+    <div class="left-section">
+      <a class="logo" href="#"><span >P</span>roducts</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-item">Home</a></li>
+        <li><a href="#" class="nav-item">About</a></li>
+        <li><a href="#" class="nav-item">Blog</a></li>
+        <li><a href="#" class="nav-item">Contact</a></li>
+      </ul>
+        <input type="text" id="nameInpt" class="nameFilter" placeholder="search.....">
+               <i class="fa-solid fa-user"></i>
+<a href="cart.html">
+    <div class="cart-icon">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-count" id="count">0</span>
+</div>
+</a>
+
+    </div>
+
+    <!-- Right side button -->
+    <button id="btn" class="mode-btn">
+      <i id="icon" class="fa-solid fa-moon"></i>
+    </button>
+ 
+  </div>
+</nav>
+<!-- div لعرض المنتجات -->
+<div id="elementCart"></div>
+<!-- footer -->
+  <footer>
+      <div class="container">
+        <div class="footer-intro">
+          <h1>Ecommerce <span>Website</span></h1>
+          <p>
+            This is a sample page to demonstrate the footer. Scroll down to see
+            the footer.
+          </p>
+        </div>
+        <div class="footer-main">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+              We are a leading e-commerce platform offering the best products at
+              competitive prices. Our mission is to provide exceptional shopping
+              experiences.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Order Tracking</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our newsletter for the latest updates and offers.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="payment-methods">
+              <h4>We Accept</h4>
+              <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">
+            &copy; 2023 YourBrand. All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

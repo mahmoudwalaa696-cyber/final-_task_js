@@ -1,0 +1,614 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body.light {
+    background-color: white;
+    color: black;
+}
+
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+/* ======= زر تغيير الثيم ======= */
+#btn {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: transparent; /* بدون خلفية */
+    border: none;
+}
+
+/* الوضع الفاتح: أيقونة الشمس باللون الأبيض */
+body.light #btn i {
+        color: #ffeb3b;
+}
+
+/* الوضع الداكن: أيقونة القمر باللون الأصفر */
+body.dark #btn i {
+  color: #ffffff;
+}
+
+
+/* ==== Navbar ==== */
+
+/* full container */
+.container-nav {
+    background: #111;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  position: fixed;
+  z-index: 9999;
+    top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  margin: auto;
+   padding: 15px 10px;
+  display: flex;
+  justify-content: space-between; /* ← لوجو واللينكات شمال / زر يمين */
+  align-items: center;
+    position: fixed;
+}
+
+/* left side container */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* مسافة بين اللوجو واللينكات */
+}
+
+/* ==== Logo ==== */
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+span{
+     color: #f7c325;
+}
+
+/* ==== Navbar Links ==== */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  padding-bottom: 4px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Hover underline */
+.nav-item::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #f7c325;
+  transition: 0.3s;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: #f7c325;
+}
+.cart-icon {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 15px;
+
+}
+
+.fa-solid  {
+    color:white;
+}
+.fa-solid:hover {
+    color:#f7c325;
+}
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ff3d00;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+
+/* ==== Mode Button ==== */
+.mode-btn {
+   /* position:fixed; */
+  cursor: pointer;
+  font-size: 18px;
+  padding-bottom: 50px;
+  margin-right: 20px;
+margin-top: 5px;
+}
+
+#icon{
+    color: #f7c325;
+    position: fixed;
+}
+
+.fa-sun:before {
+    color: #f7c325;
+}
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .container-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* خلي left-section row عشان كل العناصر تبقى جنب بعض */
+  .left-section {
+    flex-direction: row;
+    flex-wrap: wrap; /* لو الشاشة ضيقة العناصر تتوزع بس مش عمودي */
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* لينكات التنقل تبقى row وتلتف لو ضاقت الشاشة */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* البحث */
+  .nameFilter {
+    margin-left: 0;
+    width: auto; /* خليه يتوسع حسب المحتوى */
+    flex: 1; /* يأخذ مساحة متاحة مع العناصر التانية */
+    min-width: 120px;
+  }
+
+  /* الآيكونات والسلة */
+  .cart-icon, .fa-user {
+    margin-left: 10px;
+  }
+
+  /* زر الثيم يبقى فوق في مكان ثابت */
+  #btn {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* أيقونات Navbar على الشاشات الكبيرة */
+.left-section i {
+    color: white;
+
+}
+
+/* البحث input على الشاشات الكبيرة */
+.nameFilter {
+    color: black;
+    border-radius: 10px;
+    padding: 8px;
+    
+}
+
+/* أيقونات Navbar على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  /* container-nav يبقى column عشان البحث والأيقونات يكونوا فوق */
+  .container-nav {
+    flex-direction: column;
+    padding: 15px 10px;
+    align-items: center;
+        height: auto;
+  }
+
+  /* left-section يبقى row، السيرش والأيقونات جنب بعض */
+  .left-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* nav-links: نضمن row وليس column */
+  .nav-links {
+    display: flex !important;       /* تأكد أن flex مفعل */
+    flex-direction: row !important; /* اجعلها row */
+    flex-wrap: wrap;                /* يلتف لو الشاشة ضيقة */
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  /* البحث */
+  .nameFilter {
+    flex: 1;
+    min-width: 120px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    color: black;
+  }
+
+  /* الأيقونات */
+  .cart-icon i, .fa-user {
+    color: white; /* نفس اللون في الشاشات الكبيرة */
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+}
+
+
+
+
+/* ==============================Cart Page – Product Cards  ================================ */
+/* Container of all cards */
+#elementCart p {
+   text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px auto;
+    padding: 30px 20px;
+    background: #f7c325;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px white;
+    width: 300px;
+    margin-left: 450px;
+    color: white;
+}
+
+body.dark #elementCart p {
+    background: white;
+    color: #f7c325;
+    box-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+#elementCart {
+    width: 90%;
+    margin: 120px auto 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+@media (max-width: 768px){
+    #elementCart p {
+    margin-left: 70px;
+  margin-top: 70px;
+}
+}
+
+/* Single card */
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+body.dark .card {
+    background: #222;
+    color: white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Image container */
+.products-images {
+    width: 100%;
+    height: 250px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body.dark .products-images {
+    background: #333;
+}
+
+.products-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product info */
+.product-info {
+    margin-top: 15px;
+}
+
+.product-category {
+    font-size: 14px;
+    color: #666;
+}
+
+body.dark .product-category {
+    color: #ddd;
+}
+
+h3 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+/* Rating */
+.product-rating {
+    margin: 8px 0;
+}
+
+.rating-count {
+    color: #f7c325;
+    font-weight: bold;
+}
+
+/* Quantity buttons */
+
+.quantity-controlss {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 15px 0;
+}
+
+/* Container for quantity buttons (+/-) */
+.quantity-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Trash button */
+.remove_Product {
+    background: #ff3d00;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.remove_Product:hover {
+    background: #e63600;
+}
+
+/* Price below quantity & trash row */
+.product-price {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right; /* السعر على الطرف الآخر */
+    color: #333;
+}
+
+body.dark .product-price {
+    color: #f7c325;
+}
+
+/* ===========================Footer Styling=========================== */
+
+footer {
+    background-color:#f7c325 ; /* نفس لون navbar */
+    color: #fff;
+    padding: 50px 0 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #111; /* اللون الأصفر اللي استخدمتيه */
+}
+
+/* Footer Intro */
+.footer-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-intro h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.footer-intro h1 span {
+    color: #111;
+}
+
+.footer-intro p {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Footer Main Columns */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Column Titles */
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #111; /* العنوان أصفر */
+}
+
+/* Lists */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    font-size: 15px;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links i {
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-links i:hover {
+    color: #111;
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 8px 15px;
+    border: none;
+    background-color:#111 ;
+    color: #f7c325;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: white;
+}
+
+/* Payment Icons */
+.payment-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.payment-icons i {
+    font-size: 28px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.payment-icons i:hover {
+    color: #111;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-bottom a {
+    margin-left: 15px;
+}
+
+/* Dark Mode Support */
+body.dark footer {
+    background-color: #f7c325;
+    color: #fff;
+}
+
+body.dark footer .footer-column h3,
+body.dark footer .social-links i:hover,
+body.dark footer .payment-icons i:hover {
+    color: #111;
+}
+
+body.dark footer a:hover {
+    color: #111;
+}
+
+body.dark .newsletter-form button {
+    background-color: #111;
+    color: #f7c325;
+}
+
+body.dark .newsletter-form button:hover {
+    background-color: #d3a41f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-bottom a {
+        margin-left: 0;
+    }
+}
+

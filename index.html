@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+
+      <!-- bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+ 
+     <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<body class="light">
+        <nav class="navbar">
+  <div class="container-nav">
+
+    <!-- Left side (logo + links) -->
+    <div class="left-section">
+      <a class="logo" href="#"><span >P</span>roducts</a>
+
+      <ul class="nav-links">
+        <li><a href="#" class="nav-item">Home</a></li>
+        <li><a href="#" class="nav-item">About</a></li>
+        <li><a href="#" class="nav-item">Blog</a></li>
+        <li><a href="#" class="nav-item">Contact</a></li>
+      </ul>
+        <input type="text" id="nameInpt" class="nameFilter" placeholder="Search products.....">
+               <i class="fa-solid fa-user"></i>
+<a href="cart.html">
+    <div class="cart-icon">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-count" id="count">0</span>
+</div>
+</a>
+
+    </div>
+
+    <!-- Right side button -->
+    <button id="btn" class="mode-btn">
+      <i id="icon" class="fa-solid fa-moon"></i>
+    </button>
+ 
+  </div>
+</nav>
+<!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="image/image1.png" alt=""></div>
+      <div class="swiper-slide"><img src="image/image2.png" alt=""></div>
+            <div class="swiper-slide"><img src="image/image3.png" alt=""></div>
+                  <div class="swiper-slide"><img src="image/image4.png" alt=""></div>
+    </div>
+
+  </div>
+
+
+<div class="hh1">
+    <h1>Our Products</h1>
+    <hr>
+</div>
+
+<!-- filter -->
+<div class="filters" id="filters">
+
+        <select id="categories" class="styled-select" fdprocessedid="0yoxhp">
+            <option value="all">all Category</option>
+            <option value="beauty">beauty</option>
+            <option value="fragrances">fragrances</option>
+            <option value="furniture">furniture</option>
+            <option value="groceries">groceries</option>
+            <option value="home-decoration">home-decoration</option>
+            <option value="kitchen-accessories">kitchen-accessories</option>
+            <option value="laptops">laptops</option>
+            <option value="mens-shirts">mens-shirts</option>
+            <option value="mens-shoes">mens-shoes</option>
+            <option value="mens-watches">mens-watches</option>
+            <option value="mobile-accessories">mobile-accessories</option>
+            <option value="motorcycle">motorcycle</option>
+            <option value="skin-care">skin-care</option>
+            <option value="smartphones">smartphones</option>
+            <option value="sports-accessories">sports-accessories</option>
+            <option value="sunglasses">sunglasses</option>
+            <option value="tablets">tablets</option>
+            <option value="tops">tops</option>
+            <option value="vehicle">vehicle</option>
+            <option value="womens-bags">womens-bags</option>
+            <option value="womens-dresses">womens-dresses</option>
+            <option value="womens-jewellery">womens-jewellery</option>
+            <option value="womens-shoes">womens-shoes</option>
+            <option value="womens-watches">womens-watches</option>
+          </select>
+          <select id="select_Price" class="filter-select styled-select" fdprocessedid="pv81f">
+            <option value="featured">Sort by: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-desc">Rating: High to Low</option>
+            <option value="rating-asc">Rating: Low to High</option>
+          </select>
+  </div>
+
+  <span id="loader" class="loader"></span>
+<div id="products_container"></div>
+ <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- sweetalert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+
+  <script src="maine.js"></script>
+
+</body>
+</html>
